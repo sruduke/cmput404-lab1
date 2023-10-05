@@ -1,0 +1,55 @@
+-i shows the HTTP response headers in the output
+
+Q1
+https://github.com/sruduke
+
+Q2
+I already had the requests library on my system, it was version 2.28.2.
+
+Q3
+Requests is not installed on the venv since it was just initialized. The version
+on the venv is 2.31.0.
+
+Q4
+Not virtual environment python uses the system's global packages and
+configuration to run programs. The virtual environment python, however, is a
+minimal and isolated instance of python that is specific to a certain project /
+program.
+
+Q5
+The status code `301 MOVED` is returned for `http://google.com`. After using `curl -i`, we could see that the document moved to `https://www.google.com`, which gives a 200 code.
+
+Q6
+curl with -i 
+------------
+The status code for `http://google.com/teapot` returned 301 'Moved Permanently'.
+
+The curl returned the status code, the HTTP response headers, and the HTTP response, which contained HTML indicating the document moved to https://www.google.com/teapot.
+
+
+curl with `-iL`
+---------------
+The initial status code was 301 'Moved Permanently', but then followed a
+redirect to get the status code of 418 'I'm a teapot'.
+
+The curl returned the status code, the HTTP response headers, and the HTTP response, which contained an HTML body containing references to the 'I'm a Little Teapot' song.
+
+For https://www.google.com/teapot, I got 418 as the status code for both command
+flags (-i and -iL).
+ 
+
+Q7
+
+Differences in output after using -X POST:
+------------------------------------------
+* The date header changed, specifically the time
+* The HTTP response contained no form fields before, but now contains a form field; the data we passed was used in this field. 
+* The presence of the above form field adds more fields to the HTTP response such as CONTENT_LENGTH and CONTENT_TYPE.
+* The remote port for the former was 50314, while the latter has a remote port of 46022
+* The request method for the former was a HTTP GET, while the latter is an HTTP POST
+* They contain different unique IDs
+
+An HTTP POST request is useful for providing data to a web server; it can be used to create, update, or upload resources, or perform other operations such as authentication.
+
+Q8
+https://raw.githubusercontent.com/sruduke/cmput404-lab1/master/lab1.py 
